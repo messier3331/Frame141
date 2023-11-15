@@ -42,10 +42,12 @@ typedef	struct tagUnitData
 #else
 	CString	strName;
 #endif
-	int		iHp;
-	int		iAttack;
-	BYTE	byJobIndex;
-	BYTE	byItem;
+	int			iHp;
+	int			iAttack;
+	int			iSpeed;
+
+	D3DXVECTOR3 tPos;
+
 }UNITDATA;
 
 typedef struct tagTexturePath

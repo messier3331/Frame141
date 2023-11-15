@@ -64,5 +64,6 @@
 #include <string>
 #include <algorithm>
 #include <atlimage.h>
+#include <random>
 
 using namespace std;
