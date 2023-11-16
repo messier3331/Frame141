@@ -941,3 +941,4 @@ void CUnitTool::OnLoadPresetBtnPressed()
 
 	UpdateData(FALSE);
 }
+
