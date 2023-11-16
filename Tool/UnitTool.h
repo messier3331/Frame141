@@ -29,14 +29,15 @@ public:
 	int				m_iObjAttack;
 	int				m_iObjSpeed;
 	D3DXVECTOR3		m_tObjPos;
-	mt19937			gen;
+
 
 
 	//Control
 	afx_msg void	OnSavePreset();
 	afx_msg void	OnRandomReset();
 	afx_msg void	OnAddPreset(NMHDR* pNMHDR, LRESULT* pResult);
-	afx_msg void	OnPresetListBox(NMHDR* pNMHDR, LRESULT* pResult);
+	//afx_msg void	OnPresetListBox(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void	OnPresetListBox();
 	afx_msg void	OnErasePreset();
 	afx_msg BOOL	OnEraseBkgnd(CDC* pDC);
 	afx_msg HBRUSH	OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
@@ -44,13 +45,37 @@ public:
 	afx_msg void	OnSavePresetData();
 	afx_msg void	OnLoadPresetData();
 	afx_msg void	OnDropFiles(HDROP hDropInfo);
+	afx_msg void	OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
+	afx_msg void	OnXChanged();
+	afx_msg void OnRandomButtonPressed();
+	afx_msg void OnSettingSaveButtonPressed();
+	afx_msg void OnDeletePresetBtnPressed();
+	afx_msg void OnSavePresetBtnPressed();
+	afx_msg void OnLoadPresetBtnPressed();
 
 
 	CListBox	m_PresetListBox;
 	CListCtrl	m_PresetListCtrl;
+	CString m_strPresetFindName;
+	CStatic m_Picture;
+	CStatic m_PreviewPicture;
+	CSliderCtrl m_XSlider;
+	CSliderCtrl m_YSlider;
+	CSliderCtrl m_HPSlider;
+	CSliderCtrl m_SpeedSlider;
+	CSliderCtrl m_AttackSlider;
+	CEdit m_CtlAxisX;
+	CEdit m_CtlAxisY;
+	CEdit m_CtlHP;
+	CEdit m_CtlSpeed;
+	CEdit m_CtlAttack;
 	map<CString, UNITDATA*>	m_mapUnitData;
 	map<CString, CImage*>		m_mapPngImg;
-
+	CMFCButton m_RandomBtn;
+	CMFCButton m_SettingSaveBtn;
+	CMFCButton m_DeletePresetBtn;
+	CMFCButton m_SavePresetDataBtn;
+	CMFCButton m_LoadPresetDataBtn;
 
 private:
 	int	GetRandomNumber(int min, int max)
@@ -59,14 +84,19 @@ private:
 		int fNum = distrib(gen);
 		return fNum;
 	}
+
+	void	SetMFCButton(CMFCButton& button);
+	void	UpdateSlidersToEdit();
 	virtual BOOL OnInitDialog();
 	int		FindItemByName(CListCtrl& listCtrl, const CString& strName);
 
-public:
-	
-	CString m_strPresetFindName;
-	CStatic m_Picture;
+	mt19937			gen;
+	CFont			m_Font;
+
+
+
 	float m_fAxisX;
 	float m_fAxisY;
-	afx_msg void OnPresetListBox();
+
+
 };

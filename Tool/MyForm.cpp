@@ -56,7 +56,7 @@ void CMyForm::OnInitialUpdate()
 	CFormView::OnInitialUpdate();
 
 	// CreatePointFont(폰트 크기, 글씨체)
-	m_Font.CreatePointFont(180, L"Pretendard Variable");
+	m_Font.CreatePointFont(120, L"Pretendard Variable");
 
 	// GetDlgItem : 다이얼로그에 배치된 리소스를 id값에 따라 얻어오는 함수
 	GetDlgItem(IDC_BUTTON1)->SetFont(&m_Font);
@@ -74,6 +74,8 @@ void CMyForm::OnUnitTool()
 	if(nullptr == m_UnitTool.GetSafeHwnd())
 		m_UnitTool.Create(IDD_UNITTOOL);
 	
+
+	m_UnitTool.SetWindowPos(NULL, 1600, 0, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 	// 창 모양으로 출력
 	m_UnitTool.ShowWindow(SW_SHOW);
 

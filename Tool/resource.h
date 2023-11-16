@@ -41,14 +41,20 @@
 #define IDC_SLIDER4                     1021
 #define IDC_SLIDER5                     1022
 #define IDC_PICTURE1                    1023
+#define IDC_PICTURE2                    1024
+#define IDC_MFCBUTTON1                  1025
+#define IDC_MFCBUTTON3                  1028
+#define IDC_MFCBUTTON2                  1029
+#define IDC_MFCBUTTON4                  1030
+#define IDC_MFCBUTTON5                  1031
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        313
+#define _APS_NEXT_RESOURCE_VALUE        314
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1024
+#define _APS_NEXT_CONTROL_VALUE         1030
 #define _APS_NEXT_SYMED_VALUE           313
 #endif
 #endif

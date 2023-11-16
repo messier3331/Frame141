@@ -30,6 +30,7 @@
 #include <map>
 #include <string>
 #include <algorithm>
+#pragma commnet(lib, "UxTheme.lib")
 
 #ifdef _DEBUG
 
