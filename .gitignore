@@ -366,3 +366,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+Texture/Stage/Terrain/.DS_Store
