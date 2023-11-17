@@ -202,6 +202,7 @@
     <ClInclude Include="MiniView.h" />
     <ClInclude Include="MultiTexture.h" />
     <ClInclude Include="MyForm.h" />
+    <ClInclude Include="PathFinder.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SingleTexture.h" />
     <ClInclude Include="stdafx.h" />
@@ -223,6 +224,7 @@
     <ClCompile Include="MiniView.cpp" />
     <ClCompile Include="MultiTexture.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="PathFinder.cpp" />
     <ClCompile Include="SingleTexture.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

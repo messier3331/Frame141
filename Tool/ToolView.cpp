@@ -77,7 +77,6 @@ void CToolView::OnInitialUpdate()
 
 	RECT	rcMainView{};
 
-	// GetClientRect : 현재 view 창의 rect 정보를 얻어오는 함수
 	GetClientRect(&rcMainView);
 
 	float	fRowFrm = float(rcWnd.right - rcMainView.right);
@@ -89,7 +88,7 @@ void CToolView::OnInitialUpdate()
 	//마지막 매개 변수가 NULL인 경우 : 순서 변경을 하지 않음
 	//마지막 매개 변수가 SWP_NOZORDER인 경우 : 현재 순서를 유지하겠음
 
-	pMainFrm->SetWindowPos(nullptr, 0, 0, int(WINCX + fRowFrm), int(WINCY + fColFrm), SWP_NOZORDER);
+	pMainFrm->SetWindowPos(nullptr, 0, 0, int(WINCX + fRowFrm) *2, int(WINCY + fColFrm) * 2, SWP_NOZORDER);
 
 
 	g_hWnd = m_hWnd;

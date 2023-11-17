@@ -2,6 +2,7 @@
 
 #include "UnitTool.h"
 #include "MapTool.h"
+#include "PathFinder.h"
 
 // CMyForm Æû ºäÀÔ´Ï´Ù.
 
@@ -33,13 +34,17 @@ public:
 	virtual void OnInitialUpdate();
 	afx_msg void OnUnitTool();
 	afx_msg void OnMapTool();
+	afx_msg void OnPathFinder();
 
 
 public:
-	CFont		m_Font;
-	CUnitTool	m_UnitTool;
-	CMapTool	m_MapTool;
-	
+	CFont			m_Font;
+	CUnitTool		m_UnitTool;
+	CMapTool		m_MapTool;
+	CPathFinder		m_PathFinder;
+	//CTabCtrl		m_TabCtrl;
+	afx_msg void OnSelectedTabChanged(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 };
 
 

@@ -37,4 +37,5 @@ public:
 
 	map<CString, CImage*>		m_mapPngImg;
 	afx_msg void OnSaveData();
+	virtual BOOL OnInitDialog();
 };

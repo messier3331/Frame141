@@ -257,6 +257,8 @@ BOOL CUnitTool::OnInitDialog()
 	//SetWindowPos(this, 1600, 0, WINCX, WINCY, );
 	
 	
+	//ModifyStyle(WS_CAPTION, 0);
+
 	//슬라이더 세팅
 	m_XSlider.SetRange(0, 128);
 	//m_XSlider.SetPos(0);
@@ -307,7 +309,9 @@ BOOL CUnitTool::OnEraseBkgnd(CDC* pDC)
 HBRUSH CUnitTool::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 {
 	HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
-	static CBrush brBkgnd(RGB(57, 57, 57));
+
+
+
 	pDC->SetTextColor(RGB(255, 255, 255));
 
 	switch (nCtlColor)
@@ -324,6 +328,7 @@ HBRUSH CUnitTool::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	default:
 		break;
 	}
+
 
 	/*
 	if (nCtlColor == CTLCOLOR_BTN ||
@@ -355,6 +360,9 @@ HBRUSH CUnitTool::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 
 	}
 	*/
+	
+
+	static CBrush brBkgnd(RGB(57, 57, 57));
 	hbr = brBkgnd;
 	return hbr;
 
@@ -405,7 +413,7 @@ void CUnitTool::OnSavePresetData()
 
 	GetCurrentDirectory(MAX_STR, szPath);
 	PathRemoveFileSpec(szPath);
-	lstrcat(szPath, L"\\Data");
+	lstrcat(szPath, L"/Data");
 	Dlg.m_ofn.lpstrInitialDir = szPath;
 
 	if (IDOK == Dlg.DoModal())
@@ -455,7 +463,7 @@ void CUnitTool::OnLoadPresetData()
 
 	PathRemoveFileSpec(szPath);
 
-	lstrcat(szPath, L"\\Data");
+	lstrcat(szPath, L"/Data");
 
 	Dlg.m_ofn.lpstrInitialDir = szPath;
 
@@ -825,7 +833,7 @@ void CUnitTool::OnSavePresetBtnPressed()
 
 	GetCurrentDirectory(MAX_STR, szPath);
 	PathRemoveFileSpec(szPath);
-	lstrcat(szPath, L"\\Data");
+	lstrcat(szPath, L"/Data");
 	Dlg.m_ofn.lpstrInitialDir = szPath;
 
 	if (IDOK == Dlg.DoModal())
@@ -876,7 +884,7 @@ void CUnitTool::OnLoadPresetBtnPressed()
 
 	PathRemoveFileSpec(szPath);
 
-	lstrcat(szPath, L"\\Data");
+	lstrcat(szPath, L"/Data");
 
 	Dlg.m_ofn.lpstrInitialDir = szPath;
 

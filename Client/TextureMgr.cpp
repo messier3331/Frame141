@@ -82,3 +82,41 @@ void CTextureMgr::Release()
 
 	m_MapTex.clear();
 }
+
+HRESULT CTextureMgr::Read_ImgPath(const wstring& wstrPath)
+{
+	wifstream	fin;
+
+	fin.open(wstrPath, ios::in);
+
+	if (!fin.fail())
+	{
+		TCHAR szObjKey[MAX_STR] = L"";
+		TCHAR szStateKey[MAX_STR] = L"";
+		TCHAR szCount[MAX_STR] = L"";
+		TCHAR szPath[MAX_PATH] = L"";
+
+		while (true)
+		{
+			fin.getline(szObjKey, MAX_STR, '|');
+			fin.getline(szStateKey, MAX_STR, '|');
+			fin.getline(szCount, MAX_STR, '|');
+			fin.getline(szPath, MAX_PATH);
+
+			if (fin.eof())
+				break;
+
+			int iCount = _ttoi(szCount);
+
+			if (FAILED(Insert_Texture(szPath, TEX_MULTI, szObjKey, szStateKey, iCount)))
+			{
+				MSG_BOX(L"Img Path Insert ½ÇÆÐ");
+				return E_FAIL;
+			}
+		}
+
+		fin.close();
+	}
+
+	return S_OK;
+}

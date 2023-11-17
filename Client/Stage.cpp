@@ -15,7 +15,13 @@ CStage::~CStage()
 
 HRESULT CStage::Ready_Scene()
 {
-	if (FAILED(CTextureMgr::Get_Instance()->Insert_Texture(L"../Texture/Stage/Terrain/Zelcrodancer/Grass/Grass%d.png", TEX_MULTI, L"Terrain", L"Tile", 70)))
+	//if (FAILED(CTextureMgr::Get_Instance()->Insert_Texture(L"../Texture/Stage/Terrain/Zelcrodancer/Grass/Grass%d.png", TEX_MULTI, L"Terrain", L"Tile", 70)))
+	//{
+	//	MSG_BOX(L"Tile Img Insert Failed");
+	//	return E_FAIL;
+	//}
+
+	if (FAILED(CTextureMgr::Get_Instance()->Read_ImgPath(L"../Data/ImgPath.txt")))
 	{
 		MSG_BOX(L"Tile Img Insert Failed");
 		return E_FAIL;

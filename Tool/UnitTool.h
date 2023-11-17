@@ -71,6 +71,8 @@ public:
 	CEdit m_CtlAttack;
 	map<CString, UNITDATA*>	m_mapUnitData;
 	map<CString, CImage*>		m_mapPngImg;
+
+
 	CMFCButton m_RandomBtn;
 	CMFCButton m_SettingSaveBtn;
 	CMFCButton m_DeletePresetBtn;

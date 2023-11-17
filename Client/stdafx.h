@@ -30,7 +30,9 @@
 #include <map>
 #include <string>
 #include <algorithm>
-#pragma commnet(lib, "UxTheme.lib")
+#include <fstream>
+
+#pragma comment(lib, "UxTheme.lib")
 
 #ifdef _DEBUG
 
